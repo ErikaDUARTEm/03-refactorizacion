@@ -21,6 +21,13 @@ public class Main {
 
             switch (opcion) {
                 case 1 -> {
+                    AccommodationData<T> data = new AccommodationData<T>(List.of(
+                            new Hotel("Hotel", "Hotel Castillo Resort", "San Gil", "Hotel Castillo Resort se encuentra en San Gil, a 42 km de Chicamocha National Park...", 4.5, 50.0, 20241215, 20250130, List.of()),
+                            new Apartament("Apartamento", "San Gil Natural", "San Gil", "San Gil Natural ofrece un entorno tranquilo con amplias vistas al río y zonas verdes exclusivas.", 4.8, 280.0, 20250101, 20250131, List.of())
+                    ));
+
+                    data.getAccommodations().forEach(System.out::println);
+                }
                     List<Hotel> hoteles = hotelFactory.getHotels();
                     if (hoteles.isEmpty()) {
                         System.out.println("No hay hoteles disponibles.");

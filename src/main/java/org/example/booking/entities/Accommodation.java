@@ -10,18 +10,8 @@ public abstract class Accommodation {
     private String city;
     private String description;
     private double rating;
-    private double basePrice;
-    private double totalPrice;
     private double adjustmentPrice;
-    private int availableCheckInDate;
-    private int availableCheckOutDate;
-    private int totalRooms;
-    private List<Hotel> hotels = new ArrayList<>();
-    private List<Apartament> apartaments = new ArrayList<>();
-    private List<Finca> fincas = new ArrayList<>();
     private List<Room> availableRooms;
-    private List<StayPackage> packages;
-    private List<Reservation> reservations;
 
 
     public Accommodation(
@@ -30,15 +20,8 @@ public abstract class Accommodation {
             String city,
             String description,
             double rating,
-            double basePrice,
-            double totalPrice,
             double adjustmentPrice,
-            int availableCheckInDate,
-            int availableCheckOutDate,
-            int totalRooms,
-            List<Room> availableRooms,
-            List<StayPackage> packages,
-            List<Reservation> reservations)
+            List<Room> availableRooms)
 
     {
         this.type = type;
@@ -46,44 +29,9 @@ public abstract class Accommodation {
         this.city = city;
         this.description = description;
         this.rating = rating;
-        this.basePrice = basePrice;
-        this.totalPrice = totalPrice;
         this.adjustmentPrice = adjustmentPrice;
-        this.availableCheckInDate = availableCheckInDate;
-        this.availableCheckOutDate = availableCheckOutDate;
-        this.totalRooms = totalRooms;
         this.availableRooms = availableRooms;
-        this.packages = packages;
-        this.reservations = reservations;
-
     }
-
-    protected Accommodation(
-            String type,
-            String name,
-            String city,
-            String description,
-            double rating,
-            double basePrice,
-            int availableCheckInDate,
-            int availableCheckOutDate,
-            int totalRooms,
-            List<Room> availableRooms,
-            List<StayPackage> packages)
-    {
-        this.type = type;
-        this.name = name;
-        this.city = city;
-        this.description = description;
-        this.rating = rating;
-        this.basePrice = basePrice;
-        this.availableCheckInDate = availableCheckInDate;
-        this.availableCheckOutDate = availableCheckOutDate;
-        this.totalRooms = totalRooms;
-        this.availableRooms = availableRooms;
-        this.packages = packages;
-    }
-
 
     public void calculateTotalPrice(double basePrice, double totalDays, int numberOfConfirmedRooms) {
         this.totalPrice = PriceCalculation.calculateTotalPrice(basePrice, totalDays, numberOfConfirmedRooms);
@@ -93,10 +41,11 @@ public abstract class Accommodation {
         this.adjustmentPrice = PriceCalculation.calculatePriceAdjustment(availableCheckInDate, availableCheckOutDate, totalPrice);
     }
     public abstract String viewAccommodation();
+
+
     public String getType() {
         return type;
     }
-    public abstract List<Accommodation> searchAvailableAccommodations();
 
     public void setType(String type) {
         this.type = type;
@@ -134,53 +83,6 @@ public abstract class Accommodation {
         this.rating = rating;
     }
 
-    public double getBasePrice() {
-        return basePrice;
-    }
-
-    public void setBasePrice(double basePrice) {
-        this.basePrice = basePrice;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public int getAvailableCheckInDate() {
-        return availableCheckInDate;
-    }
-
-    public void setAvailableCheckInDate(int availableCheckInDate) {
-        this.availableCheckInDate = availableCheckInDate;
-    }
-
-    public int getAvailableCheckOutDate() {
-        return availableCheckOutDate;
-    }
-
-    public void setAvailableCheckOutDate(int availableCheckOutDate) {
-        this.availableCheckOutDate = availableCheckOutDate;
-    }
-
-    public int getTotalRooms() {
-        return totalRooms;
-    }
-
-    public void setTotalRooms(int totalRooms) {
-        this.totalRooms = totalRooms;
-    }
-
-    public List<Room> getAvailableRooms() {
-        return availableRooms;
-    }
-
-    public void setAvailableRooms(List<Room> availableRooms) {
-        this.availableRooms = availableRooms;
-    }
     public double getAdjustmentPrice() {
         return adjustmentPrice;
     }
@@ -189,44 +91,12 @@ public abstract class Accommodation {
         this.adjustmentPrice = adjustmentPrice;
     }
 
-    public List<StayPackage> getPackages() {
-        return packages;
+    public List<Room> getAvailableRooms() {
+        return availableRooms;
     }
 
-    public void setPackages(List<StayPackage> packages) {
-        this.packages = packages;
-    }
-
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
-    }
-
-    public List<Hotel> getHotels() {
-        return hotels;
-    }
-
-    public void setHotels(List<Hotel> hotels) {
-        this.hotels = hotels;
-    }
-
-    public List<Apartament> getApartaments() {
-        return apartaments;
-    }
-
-    public void setApartaments(List<Apartament> apartaments) {
-        this.apartaments = apartaments;
-    }
-
-    public List<Finca> getFincas() {
-        return fincas;
-    }
-
-    public void setFincas(List<Finca> fincas) {
-        this.fincas = fincas;
+    public void setAvailableRooms(List<Room> availableRooms) {
+        this.availableRooms = availableRooms;
     }
 }
 
