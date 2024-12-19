@@ -4,53 +4,33 @@ import org.example.booking.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        HotelFactory hotelFactory = new HotelFactory();
-        ApartamentFactory apartamentFactory = new ApartamentFactory();
-        FincaFactory fincaFactory = new FincaFactory();
+        AccommodationData accommodationData = new AccommodationData();
+        accommodationData.initializeAccommodations();
+
+
 
         while (true) {
             viewMenu();
-
             int opcion = scanner.nextInt();
 
             switch (opcion) {
                 case 1 -> {
-                    AccommodationData<T> data = new AccommodationData<T>(List.of(
-                            new Hotel("Hotel", "Hotel Castillo Resort", "San Gil", "Hotel Castillo Resort se encuentra en San Gil, a 42 km de Chicamocha National Park...", 4.5, 50.0, 20241215, 20250130, List.of()),
-                            new Apartament("Apartamento", "San Gil Natural", "San Gil", "San Gil Natural ofrece un entorno tranquilo con amplias vistas al río y zonas verdes exclusivas.", 4.8, 280.0, 20250101, 20250131, List.of())
-                    ));
+                    List<Object> listAll = accommodationData.getAccommodations();
 
-                    data.getAccommodations().forEach(System.out::println);
-                }
-                    List<Hotel> hoteles = hotelFactory.getHotels();
-                    if (hoteles.isEmpty()) {
-                        System.out.println("No hay hoteles disponibles.");
+                    if (listAll.isEmpty()) {
+                        System.out.println("No hay alojamientos disponibles.");
                     } else {
-                        hoteles.forEach(hotel -> System.out.println(hotel.viewAccommodation()));
+                        listAll.forEach(System.out::println);
                     }
                 }
-                case 2->{
-                    List<Apartament> apartaments = apartamentFactory.getApartaments();
-                    if (apartaments.isEmpty()) {
-                        System.out.println("No hay apartamentos disponibles.");
-                    } else {
-                        apartaments.forEach(apartament -> System.out.println(apartament.viewAccommodation()));
-                    }
-                }
-                case 3->{
-                    List<Finca> fincas = fincaFactory.getFincas();
-                    if (fincas.isEmpty()) {
-                        System.out.println("No hay fincas disponibles.");
-                    } else {
-                        fincas.forEach(finca -> System.out.println(finca.viewAccommodation()));
-                    }
-                }
+
                 case 0 -> {
                     System.out.println("Saliendo...");
                     return;

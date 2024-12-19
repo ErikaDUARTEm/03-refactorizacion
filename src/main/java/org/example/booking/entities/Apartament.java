@@ -9,15 +9,10 @@ public class Apartament extends Accommodation{
             String name,
             String city,
             String description,
-            double rating,
-            double basePrice,
-            int availableCheckInDate,
-            int availableCheckOutDate,
-            int totalRooms,
-            List<Room> availableRooms,
-            List<StayPackage> packages) {
-        super(type, name, city, description, rating, basePrice, availableCheckInDate,
-                availableCheckOutDate, totalRooms, availableRooms, packages);
+            Double rating,
+            Double adjustmentPrice,
+            List<Room> availableRooms) {
+        super(type, name, city, description, rating, adjustmentPrice, availableRooms);
     }
 
     @Override
@@ -27,59 +22,16 @@ public class Apartament extends Accommodation{
                         "Nombre: %s%n" +
                         "Ciudad: %s%n" +
                         "Calificación: %.1f%n" +
-                        "Precio por noche: $%.2f%n" +
-                        "Precio total: $%.2f%n" +
                         "Detalles del apartamento: %d habitaciones disponibles%n" +
                         "****************** Paquetes Disponibles ***********************%n",
                 this.getName(),
                 this.getCity(),
                 this.getRating(),
-                this.getBasePrice(),
-                this.getTotalPrice(),
                 this.getAvailableRooms().size()
         );
-
-        for (StayPackage paquete : this.getPackages()) {
-            apartamentDetails += String.format(
-                    " - %s: $%.2f%n   Descripción: %s%n",
-                    paquete.getName(), paquete.getPrice(), paquete.getDescription()
-            );
-        }
 
         apartamentDetails += "**************************************************************";
 
         return apartamentDetails;
-    }
-
-    @Override
-    public List<Accommodation> searchAvailableAccommodations() {
-        return List.of();
-    }
-
-    public static Apartament createApartament(
-            String name,
-            String city,
-            String description,
-            double rating,
-            double basePrice,
-            int availableCheckInDate,
-            int availableCheckOutDate,
-            int totalRooms,
-            List<Room> rooms,
-            List<StayPackage> packages
-    ) {
-        return new Apartament(
-                "apartamento",
-                name,
-                city,
-                description,
-                rating,
-                basePrice,
-                availableCheckInDate,
-                availableCheckOutDate,
-                totalRooms,
-                rooms,
-                packages
-        );
     }
 }

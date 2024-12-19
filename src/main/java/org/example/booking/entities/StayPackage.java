@@ -2,7 +2,7 @@ package org.example.booking.entities;
 
 public class StayPackage {
     private String name;
-    private double price;
+    private Double price;
     private String description;
 
     public StayPackage(String name, double price, String description) {

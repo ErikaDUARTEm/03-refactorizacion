@@ -1,24 +1,17 @@
 package org.example.booking.entities;
 
 
+import java.util.List;
 
 public class Hotel extends Accommodation {
 
     private Boolean sunnyDay;
-    public Hotel(
-            String type,
-            String name,
-            String city,
-            String description,
-            double rating,
-            int totalRooms,
-            List<Room> availableRooms,
-            Boolean sunnyDay
-    ){
-        super(type, name, city, description, rating,
-                 totalRooms, availableRooms );
+
+    public Hotel(String type, String name, String city, String description, Double rating, Double adjustmentPrice, List<Room> availableRooms, Boolean sunnyDay) {
+        super(type, name, city, description, rating, adjustmentPrice, availableRooms);
         this.sunnyDay = sunnyDay;
     }
+
 
     @Override
     public String viewAccommodation() {
@@ -41,4 +34,11 @@ public class Hotel extends Accommodation {
         return hotelDetails;
     }
 
+    public Boolean getSunnyDay() {
+        return sunnyDay;
+    }
+
+    public void setSunnyDay(Boolean sunnyDay) {
+        this.sunnyDay = sunnyDay;
+    }
 }

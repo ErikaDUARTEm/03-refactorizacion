@@ -1,7 +1,5 @@
 package org.example.booking.entities;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Accommodation {
@@ -9,8 +7,8 @@ public abstract class Accommodation {
     private String name;
     private String city;
     private String description;
-    private double rating;
-    private double adjustmentPrice;
+    private Double rating;
+    private Double adjustmentPrice;
     private List<Room> availableRooms;
 
 
@@ -19,8 +17,8 @@ public abstract class Accommodation {
             String name,
             String city,
             String description,
-            double rating,
-            double adjustmentPrice,
+            Double rating,
+            Double adjustmentPrice,
             List<Room> availableRooms)
 
     {
@@ -32,7 +30,7 @@ public abstract class Accommodation {
         this.adjustmentPrice = adjustmentPrice;
         this.availableRooms = availableRooms;
     }
-
+/**
     public void calculateTotalPrice(double basePrice, double totalDays, int numberOfConfirmedRooms) {
         this.totalPrice = PriceCalculation.calculateTotalPrice(basePrice, totalDays, numberOfConfirmedRooms);
     }
@@ -40,9 +38,8 @@ public abstract class Accommodation {
     public void adjustTotalPrice(int availableCheckInDate, int availableCheckOutDate, double totalPrice) {
         this.adjustmentPrice = PriceCalculation.calculatePriceAdjustment(availableCheckInDate, availableCheckOutDate, totalPrice);
     }
+ **/
     public abstract String viewAccommodation();
-
-
     public String getType() {
         return type;
     }
@@ -75,19 +72,19 @@ public abstract class Accommodation {
         this.description = description;
     }
 
-    public double getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
-    public double getAdjustmentPrice() {
+    public Double getAdjustmentPrice() {
         return adjustmentPrice;
     }
 
-    public void setAdjustmentPrice(double adjustmentPrice) {
+    public void setAdjustmentPrice(Double adjustmentPrice) {
         this.adjustmentPrice = adjustmentPrice;
     }
 
@@ -98,6 +95,8 @@ public abstract class Accommodation {
     public void setAvailableRooms(List<Room> availableRooms) {
         this.availableRooms = availableRooms;
     }
+
+
 }
 
 
