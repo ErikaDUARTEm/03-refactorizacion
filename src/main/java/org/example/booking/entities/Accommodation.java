@@ -39,7 +39,27 @@ public abstract class Accommodation {
         this.adjustmentPrice = PriceCalculation.calculatePriceAdjustment(availableCheckInDate, availableCheckOutDate, totalPrice);
     }
  **/
+protected String roomsDetails(List<Room> rooms) {
+    StringBuilder details = new StringBuilder();
+    for (Room room : rooms) {
+        int capacityTotal = room.getAdultsCapacity() + room.getChildrenCapacity();
+        details.append(String.format(
+                "  - Habitación: %s%n" +
+                        "    Descripción: %s%n" +
+                        "    Capacidad (adultos + niños): %d%n" +
+                        "    Precio: %.2f%n",
+                room.getName(),
+                room.getDescription(),
+                capacityTotal,
+                room.getPrice()
+        ));
+    }
+
+    return details.toString();
+
+}
     public abstract String viewAccommodation();
+
     public String getType() {
         return type;
     }

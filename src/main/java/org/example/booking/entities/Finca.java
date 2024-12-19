@@ -19,50 +19,25 @@ public class Finca extends Accommodation{
 
     @Override
     public String viewAccommodation() {
-        String fincaDetails = String.format(
+
+        return String.format(
                 "************** Fincas disponibles **********************%n" +
                         "Nombre: %s%n" +
                         "Ciudad: %s%n" +
+                        "Descripción: %s%n" +
                         "Calificación: %.1f%n" +
                         "Precio por noche: $%.2f%n" +
-                        "Precio total: $%.2f%n" +
-                        "Detalles del apartamento: %d habitaciones disponibles%n" +
-                        "****************** Paquetes Disponibles ***********************%n",
+                        "Detalles de la finca, consta de: %d habitaciones 1%n" +
+                        "****************** Detalles ***********************%n",
                 this.getName(),
                 this.getCity(),
+                this.getDescription(),
                 this.getRating(),
+                this.getAdjustmentPrice(),
                 this.getAvailableRooms().size()
-        );
-
-        fincaDetails += "**************************************************************";
-
-        return fincaDetails;
+        ) + roomsDetails(this.getAvailableRooms()) +
+                "**************************************************************";
     }
 
-    public static Finca createFinca(
-            String name,
-            String city,
-            String description,
-            double rating,
-            double basePrice,
-            int availableCheckInDate,
-            int availableCheckOutDate,
-            int totalRooms,
-            List<Room> rooms,
-            List<StayPackage> packages
-    ) {
-        return new Finca(
-                "finca",
-                name,
-                city,
-                description,
-                rating,
-                basePrice,
-                availableCheckInDate,
-                availableCheckOutDate,
-                totalRooms,
-                rooms,
-                packages
-        );
-    }
+
 }

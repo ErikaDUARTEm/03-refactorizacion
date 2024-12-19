@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Hotel extends Accommodation {
 
-    private Boolean sunnyDay;
+    private SunnyDay sunnyDay;
 
-    public Hotel(String type, String name, String city, String description, Double rating, Double adjustmentPrice, List<Room> availableRooms, Boolean sunnyDay) {
+    public Hotel(String type, String name, String city, String description, Double rating, Double adjustmentPrice, List<Room> availableRooms, SunnyDay sunnyDay) {
         super(type, name, city, description, rating, adjustmentPrice, availableRooms);
         this.sunnyDay = sunnyDay;
     }
@@ -15,30 +15,29 @@ public class Hotel extends Accommodation {
 
     @Override
     public String viewAccommodation() {
-        String hotelDetails = String.format(
+
+        return String.format(
                 "************** Detalles del Hotel **********************%n" +
-                        "Nombre: %s, " +
+                        "Nombre: %s%n" +
                         "Ciudad: %s%n" +
                         "Descripción: %s%n" +
                         "Calificación: %.1f%n" +
-                        "Habitaciones disponibles: %d%n",
+                        "Precio total ajustado: %.2f%n" +
+                        "Habitaciones disponibles:%n",
                 this.getName(),
                 this.getCity(),
                 this.getDescription(),
                 this.getRating(),
-                this.getAvailableRooms().size()
-        );
-
-        hotelDetails += "****************************************************";
-
-        return hotelDetails;
+                this.getAdjustmentPrice()
+        ) + roomsDetails(this.getAvailableRooms()) +
+                "****************************************************";
     }
 
-    public Boolean getSunnyDay() {
+    public SunnyDay getSunnyDay() {
         return sunnyDay;
     }
 
-    public void setSunnyDay(Boolean sunnyDay) {
+    public void setSunnyDay(SunnyDay sunnyDay) {
         this.sunnyDay = sunnyDay;
     }
 }

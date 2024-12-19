@@ -17,21 +17,21 @@ public class Apartament extends Accommodation{
 
     @Override
     public String viewAccommodation() {
-        String apartamentDetails = String.format(
+        return String.format(
                 "************** Apartamentos disponibles **********************%n" +
                         "Nombre: %s%n" +
                         "Ciudad: %s%n" +
+                        "Descripción: %s%n" +
                         "Calificación: %.1f%n" +
-                        "Detalles del apartamento: %d habitaciones disponibles%n" +
-                        "****************** Paquetes Disponibles ***********************%n",
+                        "Consta de : %d%n Habitaciones" +
+                        "****************** Detalles ***********************%n",
                 this.getName(),
                 this.getCity(),
+                this.getDescription(),
                 this.getRating(),
                 this.getAvailableRooms().size()
-        );
-
-        apartamentDetails += "**************************************************************";
-
-        return apartamentDetails;
+        ) + roomsDetails(this.getAvailableRooms()) +
+                "**************************************************************";
     }
+
 }
