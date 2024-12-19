@@ -30,7 +30,7 @@ public abstract class Accommodation {
         this.adjustmentPrice = adjustmentPrice;
         this.availableRooms = availableRooms;
     }
-/**
+/*
     public void calculateTotalPrice(double basePrice, double totalDays, int numberOfConfirmedRooms) {
         this.totalPrice = PriceCalculation.calculateTotalPrice(basePrice, totalDays, numberOfConfirmedRooms);
     }
@@ -38,7 +38,7 @@ public abstract class Accommodation {
     public void adjustTotalPrice(int availableCheckInDate, int availableCheckOutDate, double totalPrice) {
         this.adjustmentPrice = PriceCalculation.calculatePriceAdjustment(availableCheckInDate, availableCheckOutDate, totalPrice);
     }
- **/
+*/
 protected String roomsDetails(List<Room> rooms) {
     StringBuilder details = new StringBuilder();
     for (Room room : rooms) {

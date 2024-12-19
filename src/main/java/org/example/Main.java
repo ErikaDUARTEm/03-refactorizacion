@@ -2,11 +2,10 @@ package org.example;
 
 import org.example.booking.entities.*;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+
 
 public class Main {
 
@@ -27,12 +26,15 @@ public class Main {
                         System.out.println("No hay alojamientos disponibles.");
                     } else {
                         listAll.stream()
-                                .map(alojamiento -> showAccommodationInfo(alojamiento)) // Llamada a método específico
+                                .map(alojamiento -> showAccommodationInfo(alojamiento))
                                 .toList()
                                 .forEach(System.out::println);
                     }
                 }
+                case 2 -> {
 
+
+                }
                 case 0 -> {
                     System.out.println("Saliendo...");
                     return;
@@ -42,16 +44,6 @@ public class Main {
         }
     }
 
-    // Método auxiliar para mostrar el menú
-    private static void viewMenu() {
-        System.out.println("********************************");
-        System.out.println("1. Listar Alojamientos.");
-        System.out.println("3. Consultar disponibilidad de fechas, habitaciones y precio.");
-        System.out.println("4. Confirmar Habitaciones.");
-        System.out.println("5. Ver Reserva.");
-        System.out.println("0. Salir.");
-        System.out.println("********************************");
-    }
     private static String showAccommodationInfo(Object alojamiento) {
         if (alojamiento instanceof Hotel) {
             return ((Hotel) alojamiento).viewAccommodation();
@@ -62,4 +54,15 @@ public class Main {
         }
         return "Tipo de alojamiento desconocido.";
     }
+
+    public static void viewMenu() {
+        System.out.println("********************************");
+        System.out.println("1. Listar Alojamientos.");
+        System.out.println("2. Consultar disponibilidad de fechas, habitaciones y precio.");
+        System.out.println("4. Confirmar Habitaciones.");
+        System.out.println("5. Ver Reserva.");
+        System.out.println("0. Salir.");
+        System.out.println("********************************");
+    }
+
 }
