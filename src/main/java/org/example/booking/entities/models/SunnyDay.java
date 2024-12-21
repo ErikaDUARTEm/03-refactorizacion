@@ -1,4 +1,4 @@
-package org.example.booking.entities;
+package org.example.booking.entities.models;
 
 public class SunnyDay {
     private Double pricePeople;
@@ -7,22 +7,6 @@ public class SunnyDay {
     public SunnyDay(Double pricePeople, String activitis) {
         this.pricePeople = pricePeople;
         this.activitis = activitis;
-    }
-
-    public Double getPricePeople() {
-        return pricePeople;
-    }
-
-    public void setPricePeople(Double pricePeople) {
-        this.pricePeople = pricePeople;
-    }
-
-    public String getActivitis() {
-        return activitis;
-    }
-
-    public void setActivitis(String activitis) {
-        activitis = activitis;
     }
 
     @Override

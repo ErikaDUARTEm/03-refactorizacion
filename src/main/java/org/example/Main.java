@@ -1,38 +1,35 @@
 package org.example;
 
-import org.example.booking.entities.*;
+import org.example.booking.entities.data.AccommodationData;
+import org.example.booking.entities.models.AvailabilityRequest;
+import org.example.booking.entities.models.ConfirmAvailability;
+import org.example.booking.entities.utils.ConsoleUtils;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Scanner;
-
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        final ConsoleUtils console = new ConsoleUtils();
         AccommodationData accommodationData = new AccommodationData();
-        accommodationData.initializeAccommodations();
+        List<Object> listAll = accommodationData.getAccommodations();
+        AvailabilityRequest availabilityRequest = new AvailabilityRequest();
+        ConfirmAvailability confirmAvailability = new ConfirmAvailability();
 
         while (true) {
             viewMenu();
-            int opcion = scanner.nextInt();
+            int opcion = console.getInteger("******* Bienvenis@ ingresa el número de la opción ********");
 
             switch (opcion) {
                 case 1 -> {
-                    List<Object> listAll = accommodationData.getAccommodations();
-
-                    if (listAll.isEmpty()) {
-                        System.out.println("No hay alojamientos disponibles.");
-                    } else {
-                        listAll.stream()
-                                .map(alojamiento -> showAccommodationInfo(alojamiento))
-                                .toList()
-                                .forEach(System.out::println);
-                    }
+                    System.out.println("Lista de alojamientos disponibles:");
+                    confirmAvailability.allAccommodation(listAll);
                 }
                 case 2 -> {
-
+                    AvailabilityRequest availability = confirmAvailability.MenuConfirm(console);
+                    System.out.println(confirmAvailability.confirmAvailableRooms(listAll,availability));
+                }
+                case 3->{
 
                 }
                 case 0 -> {
@@ -44,17 +41,6 @@ public class Main {
         }
     }
 
-    private static String showAccommodationInfo(Object alojamiento) {
-        if (alojamiento instanceof Hotel) {
-            return ((Hotel) alojamiento).viewAccommodation();
-        } else if (alojamiento instanceof Apartament) {
-            return ((Apartament) alojamiento).viewAccommodation();
-        } else if (alojamiento instanceof Finca) {
-            return ((Finca) alojamiento).viewAccommodation();
-        }
-        return "Tipo de alojamiento desconocido.";
-    }
-
     public static void viewMenu() {
         System.out.println("********************************");
         System.out.println("1. Listar Alojamientos.");
@@ -64,5 +50,4 @@ public class Main {
         System.out.println("0. Salir.");
         System.out.println("********************************");
     }
-
 }

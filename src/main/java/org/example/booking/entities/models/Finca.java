@@ -1,37 +1,43 @@
-package org.example.booking.entities;
+package org.example.booking.entities.models;
 
 import java.util.List;
 
-public class Apartament extends Accommodation{
+public class Finca extends Accommodation {
 
-    public Apartament(
+    public Finca(
             String type,
             String name,
             String city,
             String description,
             Double rating,
-            Double adjustmentPrice,
-            List<Room> availableRooms) {
-        super(type, name, city, description, rating, adjustmentPrice, availableRooms);
-    }
+            Double price,
+            List<Room> availableRooms
+    ){
+
+            super(type, name, city, description, rating, price, availableRooms);
+    };
 
     @Override
     public String viewAccommodation() {
+
         return String.format(
-                "************** Apartamentos disponibles **********************%n" +
+                "************** Fincas disponibles **********************%n" +
                         "Nombre: %s%n" +
                         "Ciudad: %s%n" +
                         "Descripción: %s%n" +
                         "Calificación: %.1f%n" +
-                        "Consta de : %d%n Habitaciones" +
+                        "Precio por noche: $%.2f%n" +
+                        "Detalles de la finca, consta de: %d habitaciones 1%n" +
                         "****************** Detalles ***********************%n",
                 this.getName(),
                 this.getCity(),
                 this.getDescription(),
                 this.getRating(),
+                this.getprice(),
                 this.getAvailableRooms().size()
         ) + roomsDetails(this.getAvailableRooms()) +
                 "**************************************************************";
     }
+
 
 }

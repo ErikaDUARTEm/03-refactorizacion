@@ -1,4 +1,4 @@
-package org.example.booking.entities;
+package org.example.booking.entities.models;
 
 public class PriceCalculation {
 

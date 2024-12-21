@@ -1,4 +1,4 @@
-package org.example.booking.entities;
+package org.example.booking.entities.models;
 
 public class Usuario {
     protected String name;
@@ -17,6 +17,22 @@ public class Usuario {
     }
 
     protected Usuario() {
+    }
+
+    public String viewUsuario() {
+        return String.format(
+                "************** Detalles del Hotel **********************%n" +
+                        "Nombre: %s%n" +
+                        "Apellido: %s%n" +
+                        "Email: %s%n" +
+                        "Nacionalidad: %s%n" +
+                        "Telefono: %s%n",
+                this.getName(),
+                this.getLastName(),
+                this.getEmail(),
+                this.getNationality(),
+                this.getPhone()
+        );
     }
 
     public String getName() {
@@ -58,5 +74,4 @@ public class Usuario {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
 }
