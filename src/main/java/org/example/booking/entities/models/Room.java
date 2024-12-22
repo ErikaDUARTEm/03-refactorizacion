@@ -35,47 +35,24 @@ public class Room {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Integer getAdultsCapacity() {
         return adultsCapacity;
     }
 
-    public void setAdultsCapacity(Integer adultsCapacity) {
-        this.adultsCapacity = adultsCapacity;
-    }
-
     public Integer getChildrenCapacity() {
         return childrenCapacity;
-    }
-
-    public void setChildrenCapacity(Integer childrenCapacity) {
-        this.childrenCapacity = childrenCapacity;
     }
 
     public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
     public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 }

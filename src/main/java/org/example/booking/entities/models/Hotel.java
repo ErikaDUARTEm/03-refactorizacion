@@ -14,29 +14,62 @@ public class Hotel extends Accommodation {
 
     @Override
     public String viewAccommodation() {
+            if (this.getSunnyDay() != null) {
+                return String.format(
+                  """
+                  *************************************************************
+                  ***                      Hoteles disponibles              ***
+                  *************************************************************
+              
+                  Nombre:                 %s
+                  Ciudad:                 %s
+                  Descripción:            %s
+                  Calificación:         %.1f
+                  💲 Precio por noche:    $%.2f
+                   Número de habitaciones: %d
+              
+                  *************************************************************
+                  Detalles de las habitaciones:
+                  %s
+                  *************************************************************
+                  """,
+                  this.getName(),
+                  this.getCity(),
+                  this.getDescription(),
+                  this.getRating(),
+                  this.getprice(),
+                  this.getAvailableRooms().size(),
+                  roomsDetails(this.getAvailableRooms())
+                );
+            } else {
+                return String.format(
+                  """
+                  🌞🌞🌞*************************************************************
+                  ***           Hoteles con Día de Sol disponibles          ***
+                  *************************************************************
+              
+                  Nombre:                 %s
+                  Ciudad:                 %s
+                  Descripción:            %s
+                   Calificación:         %.1f
+                  💲 Precio por noche:    $%.2f
+                  🌴 Día de Sol incluye:  %s
+              
+                  *************************************************************
+                  """,
+                  this.getName(),
+                  this.getCity(),
+                  this.getDescription(),
+                  this.getRating(),
+                  this.getprice(),
+                  this.getSunnyDay()
+                );
+            }
 
-        return String.format(
-                "************** Detalles del Hotel **********************%n" +
-                        "Nombre: %s%n" +
-                        "Ciudad: %s%n" +
-                        "Descripción: %s%n" +
-                        "Calificación: %.1f%n" +
-                        "Precio total ajustado: %.2f%n" +
-                        "Habitaciones disponibles:%n",
-                this.getName(),
-                this.getCity(),
-                this.getDescription(),
-                this.getRating(),
-                this.getprice()
-        ) + roomsDetails(this.getAvailableRooms()) +
-                "****************************************************";
     }
 
     public SunnyDay getSunnyDay() {
         return sunnyDay;
     }
 
-    public void setSunnyDay(SunnyDay sunnyDay) {
-        this.sunnyDay = sunnyDay;
-    }
 }

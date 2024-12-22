@@ -27,35 +27,35 @@ public class AccommodationData {
         return List.of(
                 new Hotel("Hotel", "Hotel Castillo Resort", "San Gil", "Hotel Castillo Resort se encuentra en San Gil...", 4.5, 50.0,
                         List.of(
-                                new Room("single room", "cama individual, aire acondicionado, baño privado", 1, 1, 50.0, 5),
-                                new Room("double room", "2 camas dobles, vista a la piscina, aire acondicionado, baño privado", 4, 2, 80.0, 6),
-                                new Room("quadruple room", "4 camas, vista al jardín, aire acondicionado, baño privado, minibar", 4, 2, 100.0, 3),
-                                new Room("family room", "4 camas matrimoniales, sala de estar, aire acondicionado, baño privado", 8, 4, 120.0, 2),
-                                new Room("suite", "cama king size, sala de estar, jacuzzi, aire acondicionado, baño privado", 2, 2, 150.0, 2)),
+                                new Room("single room", "cama individual, aire acondicionado, baño privado", 1, 0, 50.0, 5),
+                                new Room("double room", "2 camas dobles, vista a la piscina, aire acondicionado, baño privado", 2, 2, 80.0, 6),
+                                new Room("quadruple room", "4 camas, vista al jardín, aire acondicionado, baño privado, minibar", 2, 2, 100.0, 3),
+                                new Room("family room", "4 camas matrimoniales, sala de estar, aire acondicionado, baño privado", 4, 4, 120.0, 2),
+                                new Room("suite", "cama king size, sala de estar, jacuzzi, aire acondicionado, baño privado", 2, 0, 150.0, 2)),
                         new SunnyDay(50.0, "Acceso por un día con servicios básicos y acceso a áreas comunes.")
                 ),
 
-                new Hotel("Hotel", "Meson del Cuchicute", "San Gil, Santander", "60 confortables habitaciones...", 4.3, 60.0,
+                new Hotel("Hotel", "Meson del Cuchicute", "San Gil", "60 confortables habitaciones...", 4.3, 60.0,
                         List.of(
-                                new Room("single room", "cama individual, baño privado, aire acondicionado", 1, 1, 60.0, 5),
-                                new Room("double room", "2 camas dobles, vista al jardín, aire acondicionado, baño privado", 4, 2, 100.0, 6),
-                                new Room("quadruple room", "4 camas, aire acondicionado, baño privado, minibar", 4, 2, 150.0, 3),
-                                new Room("family room", "4 camas matrimoniales, sala de estar, aire acondicionado, baño privado", 8, 4, 180.0, 2),
-                                new Room("suite", "cama king size, sala de estar, jacuzzi, aire acondicionado, baño privado", 2, 2, 200.0, 2)),
+                                new Room("single room", "cama individual, baño privado, aire acondicionado", 1, 0, 60.0, 5),
+                                new Room("double room", "2 camas dobles, vista al jardín, aire acondicionado, baño privado", 2, 2, 100.0, 6),
+                                new Room("quadruple room", "4 camas, aire acondicionado, baño privado, minibar", 2, 2, 150.0, 3),
+                                new Room("family room", "4 camas matrimoniales, sala de estar, aire acondicionado, baño privado", 4, 4, 180.0, 2),
+                                new Room("suite", "cama king size, sala de estar, jacuzzi, aire acondicionado, baño privado", 2, 0, 200.0, 2)),
                         new SunnyDay(50.0, "Acceso por un día con servicios básicos y acceso a áreas comunes.")
                 ),
 
                 new Hotel("Hotel", "Posada del Campanario", "San Gil", "Ubicado en el corazón de San Gil, ofrece una experiencia colonial con todas las comodidades modernas.", 4.7, 80.0,
                         List.of(
                                 new Room("colonial room", "decoración colonial, cama queen size", 2, 2, 80.0, 5),
-                                new Room("suite colonial", "cama king size, balcón, baño con jacuzzi", 2, 2, 150.0, 2)),
+                                new Room("suite colonial", "cama king size, balcón, baño con jacuzzi", 2, 0, 150.0, 2)),
                         new SunnyDay(50.0, "Acceso por un día con servicios básicos y acceso a áreas comunes.")
                 ),
 
                 new Hotel("Hotel", "Boutique La Casona", "San Gil", "Un hotel boutique exclusivo con atención personalizada y vista panorámica a la ciudad.", 4.8, 90.0,
                         List.of(
-                                new Room("familiar room", "cama matrimonial + 2 camas sencillas", 4, 2, 90.0, 6),
-                                new Room("eco suite", "decoración ecológica, cama queen size, vista a la montaña", 2, 2, 100.0, 3)),
+                                new Room("familiar room", "cama matrimonial + 2 camas sencillas", 2, 2, 90.0, 6),
+                                new Room("eco suite", "decoración ecológica, cama queen size, vista a la montaña", 2, 0, 100.0, 3)),
                         new SunnyDay(50.0, "Acceso por un día con servicios básicos y acceso a áreas comunes."))
         );
     }
@@ -66,7 +66,7 @@ public class AccommodationData {
                 new Apartament("Apartamento", "San Gil Natural", "San Gil", "San Gil Natural ofrece un entorno tranquilo...", 4.8, 400.0,
                         List.of(
                                 new Room("Habitación principal", "cama king size, aire acondicionado, baño privado", 2, 2, 0.0, 1),
-                                new Room("Habitaciones secundarias", "camas dobles, aire acondicionado, baño compartido", 4, 2, 0.0, 2),
+                                new Room("Habitaciones secundarias", "camas dobles, aire acondicionado, baño compartido", 2, 2, 0.0, 2),
                                 new Room("Sala de estar", "espaciosa con sofá, TV, acceso directo a la cocina", 0, 0, 0.0, 1),
                                 new Room("Cocina equipada", "utensilios completos, horno, nevera", 0, 0, 0.0, 1),
                                 new Room("Area exterior", "vista al río, zona de descanso al aire libre", 0, 0, 0.0, 1)

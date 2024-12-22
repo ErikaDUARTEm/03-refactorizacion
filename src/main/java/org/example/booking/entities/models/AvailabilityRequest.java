@@ -41,6 +41,13 @@ public class AvailabilityRequest {
 
   }
 
+  public AvailabilityRequest(String accommodationType) {
+    if (accommodationType == null || accommodationType.isEmpty()) {
+      throw new IllegalArgumentException("El tipo de alojamiento no puede ser nulo o vacío.");
+    }
+    this.accommodationType = accommodationType;
+  }
+
   public String getCity() {
         return city;
     }
