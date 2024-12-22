@@ -78,4 +78,24 @@ public class AccommodationService implements IAccommodationService {
     return (int) ChronoUnit.DAYS.between(startDate, endDate);
   }
 
+  public Double calculatePriceAdjustment(LocalDate availableCheckInDate, LocalDate availableCheckOutDate, Double totalPrice) {
+    int startDay = availableCheckInDate.getDayOfMonth();
+    int endDay = availableCheckOutDate.getDayOfMonth();
+
+    Double adjustment;
+    if (startDay >= 26) {
+
+      adjustment = totalPrice * 1.15;
+    } else if (startDay >= 10 && endDay <= 15) {
+      adjustment = totalPrice * 1.10;
+    } else if (startDay >= 5 && endDay <= 10) {
+      adjustment = totalPrice * 0.92;
+    } else {
+      adjustment = totalPrice;
+    }
+
+    return adjustment;
+  }
+
+
 }

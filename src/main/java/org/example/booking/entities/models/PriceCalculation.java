@@ -5,9 +5,6 @@ public class PriceCalculation {
     private PriceCalculation() {
     }
 
-    public static double calculateTotalPrice(double basePrice, double totalDays, int numberOfConfirmedRooms){
-        return basePrice * totalDays * numberOfConfirmedRooms;
-    }
     public static double calculatePriceAdjustment(int availableCheckInDate, int availableCheckOutDate, double totalPrice){
         // últimos dos dígitos para el día de inicio
         int start = availableCheckInDate % 100;

@@ -51,13 +51,7 @@ public abstract class Accommodation {
 }
 
     public abstract String viewAccommodation();
-    /**
-    public void calculateTotalPrice(Double basePrice, Double totalDays, Integer numberOfConfirmedRooms) {
-        this.price =  PriceCalculation.calculateTotalPrice(basePrice, totalDays, numberOfConfirmedRooms);
-    }
-    public void adjustTotalPrice(Integer availableCheckInDate, Integer availableCheckOutDate, Double price) {
-        this.adjustmentPrice = PriceCalculation.calculatePriceAdjustment(availableCheckInDate, availableCheckOutDate, totalPrice);
-    }**/
+
     public String getType() {return type; }
     public String getName() {
         return name;

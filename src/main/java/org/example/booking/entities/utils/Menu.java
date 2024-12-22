@@ -26,7 +26,7 @@ public class Menu {
   public void viewMenuMain() {
     System.out.println("********************************");
     System.out.println("1. Listar Alojamientos.");
-    System.out.println("2. Consultar disponibilidad de fechas, habitaciones y precio.");
+    System.out.println("2. Consultar disponibilidad por tipo de alojamiento.");
     System.out.println("3. Confirmar Habitaciones.");
     System.out.println("5. Ver Reserva.");
     System.out.println("0. Salir.");
@@ -83,8 +83,7 @@ public class Menu {
   public AvailabilityRequest menuConfirm(ConsoleUtils console){
     System.out.println("********************************");
     System.out.println("Para ver la disponibilidad de hoteles ingresa los siguientes datos:");
-    String city = console.getString("Ciudad:").toLowerCase();
-    console.getString("");
+    String city = console.getString("Ciudad:").toLowerCase().trim();
     String typeOfAccommodation = console.getString("Tipo de alojamiento:").toLowerCase();
     String startDate = console.getString("Fecha de ingreso en formato yyyyMMdd:");
     LocalDate checkIn = LocalDate.parse(startDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
@@ -94,8 +93,9 @@ public class Menu {
     Integer numbersChildrens = console.getInteger("Cantidad de niños:");
     Integer numberOfRooms = console.getInteger("Cantidad de habitaciones:");
     System.out.println("********************************");
-    return new AvailabilityRequest(
-      city, typeOfAccommodation, checkIn, checkOut, numbersAdults, numbersChildrens, numberOfRooms);
+      return new AvailabilityRequest(
+        city, typeOfAccommodation, checkIn, checkOut, numbersAdults, numbersChildrens, numberOfRooms);
+
   }
 
 }

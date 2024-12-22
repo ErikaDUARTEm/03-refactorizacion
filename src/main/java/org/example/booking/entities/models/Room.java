@@ -1,5 +1,7 @@
 package org.example.booking.entities.models;
 
+import java.time.LocalDate;
+
 public class Room {
    private String name;
    private String description;
@@ -8,13 +10,19 @@ public class Room {
    private Double price;
    private Integer quantity;
 
-    public Room(String name, String description, Integer adultsCapacity, Integer childrenCapacity, Double price, Integer quantity) {
+
+  private LocalDate availableFrom;
+   private LocalDate availableTo;
+
+    public Room(String name, String description, Integer adultsCapacity, Integer childrenCapacity, Double price, Integer quantity, LocalDate availableFrom, LocalDate availableTo) {
         this.name = name;
         this.description = description;
         this.adultsCapacity = adultsCapacity;
         this.childrenCapacity = childrenCapacity;
         this.price = price;
         this.quantity = quantity;
+        this.availableFrom = availableFrom;
+        this.availableTo = availableTo;
     }
 
     protected Room() {
@@ -54,5 +62,12 @@ public class Room {
     public Integer getQuantity() {
         return quantity;
     }
+    public LocalDate getAvailableFrom() {
+      return availableFrom;
+  }
+    public LocalDate getAvailableTo() {
+      return availableTo;
+  }
+
 
 }

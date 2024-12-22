@@ -7,7 +7,7 @@ public class ConsoleUtils {
 
   public String getString(String message){
     System.out.println(message);
-    return scanner.next();
+    return scanner.nextLine();
   }
   public Integer getInteger(String message){
     try{

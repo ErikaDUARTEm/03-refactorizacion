@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55afe3f8-17b7-4eaf-a9e0-772d04c7f8e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/services/accommodation/AccommodationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/services/interfaces/IAccommodationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/services/interfaces/ISunnyDay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/utils/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/data/AccommodationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/data/AccommodationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Apartament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Apartament.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/AvailabilityRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/AvailabilityRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Accommodation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Accommodation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/ConfirmAvailability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/ConfirmAvailability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Finca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Finca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/PriceCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/PriceCalculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/SunnyDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/models/SunnyDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/services/accommodation/AccommodationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/services/accommodation/AccommodationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/utils/ConsoleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/utils/ConsoleUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/booking/entities/utils/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "applying-refactor",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/USER/Documents/proyectos-erika/taller2/booking-hoteles",
+    "last_opened_file_path": "C:/Users/USER/Documents/proyectos-erika/booking-hotels-poo",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
