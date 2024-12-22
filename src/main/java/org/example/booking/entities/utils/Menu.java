@@ -28,7 +28,7 @@ public class Menu {
     System.out.println("1. Listar Alojamientos.");
     System.out.println("2. Consultar disponibilidad por tipo de alojamiento.");
     System.out.println("3. Confirmar Habitaciones.");
-    System.out.println("5. Ver Reserva.");
+    System.out.println("4. Hacer Reserva.");
     System.out.println("0. Salir.");
     System.out.println("********************************");
   }
@@ -59,22 +59,23 @@ public class Menu {
     );
     return accommodationTypes.get(option);
   }
-  public void handleAccommodationOptions(ConsoleUtils console, List<Object> listAll, String availabilityRequest) {
+  public void handleAccommodationOptions(ConsoleUtils console, List<Object> listAll, AvailabilityRequest availabilityRequest) {
+    String accommodationType = availabilityRequest.getAccommodationType();
     System.out.println("Selecciona una opción:");
 
-    if ("Hotel".equalsIgnoreCase(availabilityRequest)) {
+    if ("Hotel".equalsIgnoreCase(accommodationType)) {
       System.out.println("1. Estadía por noche");
       System.out.println("2. Día de sol");
       int option = console.getInteger("Ingresa el número de tu elección:");
 
       switch (option) {
         case 1 -> accommodationService.allHotels(listAll);
-        case 2 -> accommodationService.displaySunnyDayHotels(availabilityRequest, listAll);
+        case 2 -> accommodationService.displaySunnyDayHotels(accommodationType, listAll);
         default -> System.out.println("Opción inválida.");
       }
-    } else if ("Apartamento".equalsIgnoreCase(availabilityRequest)){
+    } else if ("Apartamento".equalsIgnoreCase(accommodationType)){
       accommodationService.allApartaments(listAll);
-    } else if ("Finca".equalsIgnoreCase(availabilityRequest)) {
+    } else if ("Finca".equalsIgnoreCase(accommodationType)) {
       accommodationService.allFincas(listAll);
     } else {
       System.out.println("Tipo de alojamiento inválido.");
@@ -95,7 +96,7 @@ public class Menu {
     System.out.println("********************************");
       return new AvailabilityRequest(
         city, typeOfAccommodation, checkIn, checkOut, numbersAdults, numbersChildrens, numberOfRooms);
-
   }
+
 
 }

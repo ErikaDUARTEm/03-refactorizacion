@@ -38,7 +38,7 @@ public class Apartament extends Accommodation {
           this.getCity(),
           this.getDescription(),
           this.getRating(),
-          this.getprice(),
+          this.getPrice(),
           this.getAvailableRooms().size(),
           roomsDetails(this.getAvailableRooms())
         );

@@ -32,16 +32,20 @@ public class Main {
                     AvailabilityRequest availabilityRequest = menu.menuTypeAccommodation(console);
 
                     if (availabilityRequest != null) {
-                        String accommodationType = availabilityRequest.getAccommodationType();
 
-                        menu.handleAccommodationOptions(console, listAll, accommodationType);
+                        menu.handleAccommodationOptions(console, listAll, availabilityRequest);
                     } else {
                         System.out.println("No se pudo procesar el tipo de alojamiento.");
                     }
                 }
                 case 3->{
+
                     AvailabilityRequest availability = menu.menuConfirm(console);
                     System.out.println(confirmAvailability.confirmAvailableRooms(listAll,availability));
+
+                }
+                case 4->{
+
                 }
                 case 0 -> {
                     System.out.println("Saliendo...");

@@ -69,7 +69,7 @@ public abstract class Accommodation {
         return rating;
     }
 
-    public Double getprice() {
+    public Double getPrice() {
         return price;
     }
 

@@ -24,6 +24,7 @@ public class AccommodationService implements IAccommodationService {
   }
 
   public void allAccommodation(List<Object> listAll){
+    System.out.println("Mostrando todos los alojamientos:");
     for (Object accommodation : listAll) {
       if (accommodation instanceof Accommodation) {
         System.out.println(((Accommodation) accommodation).viewAccommodation());
@@ -81,10 +82,9 @@ public class AccommodationService implements IAccommodationService {
   public Double calculatePriceAdjustment(LocalDate availableCheckInDate, LocalDate availableCheckOutDate, Double totalPrice) {
     int startDay = availableCheckInDate.getDayOfMonth();
     int endDay = availableCheckOutDate.getDayOfMonth();
-
+    System.out.println("Calculando días entre " + startDay + " y " + endDay);
     Double adjustment;
     if (startDay >= 26) {
-
       adjustment = totalPrice * 1.15;
     } else if (startDay >= 10 && endDay <= 15) {
       adjustment = totalPrice * 1.10;
@@ -93,7 +93,6 @@ public class AccommodationService implements IAccommodationService {
     } else {
       adjustment = totalPrice;
     }
-
     return adjustment;
   }
 

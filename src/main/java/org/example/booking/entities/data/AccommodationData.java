@@ -65,7 +65,7 @@ public class AccommodationData {
         "Ubicado en el corazón de San Gil, ofrece una experiencia colonial con todas las comodidades modernas.",
         4.7, 80.0,
         List.of(
-          new Room("colonial room", "decoración colonial, cama queen size", 2, 2, 80.0, 5,
+          new Room("colonial room", "decoración colonial, cama queen size", 2, 0, 80.0, 5,
             LocalDate.of(2025, 2, 20), LocalDate.of(2025, 4, 30)),
           new Room("suite colonial", "cama king size, balcón, baño con jacuzzi", 2, 0, 150.0, 2,
             LocalDate.of(2025, 2, 10), LocalDate.of(2025, 4, 30))
@@ -91,7 +91,7 @@ public class AccommodationData {
     return List.of(
       new Apartament("Apartamento", "San Gil Natural", "san gil", "San Gil Natural ofrece un entorno tranquilo...", 4.8, 400.0,
         List.of(
-          new Room("Habitación principal", "cama king size, aire acondicionado, baño privado", 2, 2, 0.0, 1, LocalDate.of(2025, 2, 18), LocalDate.of(2025, 4, 30)),
+          new Room("Habitación principal", "cama king size, aire acondicionado, baño privado", 2, 2, 0.0, 2, LocalDate.of(2025, 2, 18), LocalDate.of(2025, 4, 30)),
           new Room("Habitaciones secundarias", "camas dobles, aire acondicionado, baño compartido", 2, 2, 0.0, 2, LocalDate.of(2025, 2, 18), LocalDate.of(2025, 4, 30)),
           new Room("Sala de estar", "espaciosa con sofá, TV, acceso directo a la cocina", 0, 0, 0.0, 1, LocalDate.of(2025, 2, 18), LocalDate.of(2025, 4, 30)),
           new Room("Cocina equipada", "utensilios completos, horno, nevera", 0, 0, 0.0, 1, LocalDate.of(2025, 2, 18), LocalDate.of(2025, 4, 30)),
@@ -100,11 +100,11 @@ public class AccommodationData {
       ),
       new Apartament("Apartamento", "Puente de la Villa", "san gil", "Puente de la Villa ofrece apartamentos modernos con vistas al puente y la ciudad desde sus balcones.", 4.6, 310.0,
         List.of(
-          new Room("Habitación principal", "cama matrimonial, aire acondicionado, baño privado", 2, 2, 90.0, 1, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
-          new Room("Habitaciones secundarias", "camas individuales, aire acondicionado, baño compartido", 2, 1, 0.0, 2, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
-          new Room("Sala de estar", "sofá amplio, TV, acceso a cocina equipada", 0, 0, 0.0, 1, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
-          new Room("Cocina equipada", "utensilios básicos, horno, nevera", 0, 0, 0.0, 1, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
-          new Room("Terraza", "vista al puente, zona de descanso al aire libre", 0, 0, 0.0, 1, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30))
+          new Room("Habitación principal", "cama matrimonial, aire acondicionado, baño privado", 2, 2, 90.0, 2, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
+          new Room("Habitaciones secundarias", "camas individuales, aire acondicionado, baño compartido", 2, 2, 0.0, 2, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
+          new Room("Sala de estar", "sofá amplio, TV, acceso a cocina equipada", 4, 4, 0.0, 1, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
+          new Room("Cocina equipada", "utensilios básicos, horno, nevera", 4, 4, 0.0, 1, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
+          new Room("Terraza", "vista al puente, zona de descanso al aire libre", 4, 4, 0.0, 1, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30))
         )
       )
     );
@@ -119,7 +119,15 @@ public class AccommodationData {
                                 new Room("family room","4 camas matrimoniales, sala de estar, aire acondicionado, baño privado",  8, 4,0.0, 1,LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30)),
                                 new Room("matrimonial","cama matrimonial, baño privado, aire acondicionado",  2, 2, 0.0, 1, LocalDate.of(2024, 12, 18), LocalDate.of(2025, 3, 30))
                         )
-                )
+                ),
+                new Finca("Finca", "Finca La Salvación", "san gil", "Finca se encuentra en San Gil...", 4.1, 410.0,
+                      List.of(new Room("single room", "cama individual, baño privado, aire acondicionado",1, 1, 0.0, 1,LocalDate.of(2025, 2, 18), LocalDate.of(2025, 3, 30)),
+                             new Room("double room", "2 camas dobles, aire acondicionado, baño privado, vista al jardín", 4, 2, 0.0, 1,LocalDate.of(2024, 2, 18), LocalDate.of(2025, 3, 30)),
+                             new Room("quadruple room", "4 camas, baño privado, aire acondicionado, vista al campo", 4, 4, 0.0, 2,LocalDate.of(2025, 2, 18), LocalDate.of(2025, 3, 30)),
+                             new Room("family room","4 camas matrimoniales, sala de estar, aire acondicionado, baño privado",  8, 4,0.0, 1,LocalDate.of(2025, 2, 18), LocalDate.of(2025, 3, 30)),
+                             new Room("matrimonial","cama matrimonial, baño privado, aire acondicionado",  2, 2, 0.0, 1, LocalDate.of(2025, 2, 18), LocalDate.of(2025, 3, 30))
+            )
+          )
         );
     }
 
