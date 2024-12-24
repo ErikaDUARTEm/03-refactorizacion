@@ -4,10 +4,11 @@ import java.util.List;
 
 public class Finca extends Accommodation {
 
-    private Double price;
-    private Integer numberRooms;
+  private Double price;
+  private Integer numberRooms;
 
-    public Finca(
+
+  public Finca(
             String type,
             String name,
             String city,
@@ -36,7 +37,6 @@ public class Finca extends Accommodation {
            Descripción:         %s
            Calificación:         %.1f
           💲 Precio por noche:   $%.2f
-          
            Habitaciones:        %d disponibles
       
           *************************************************************
@@ -46,10 +46,16 @@ public class Finca extends Accommodation {
           this.getName(),
           this.getCity(),
           this.getDescription(),
-          this.getRating()
+          this.getRating(),
+          this.getPrice(),
+          getNumberRooms()
         );
 
     }
-
-
+  public Double getPrice() {
+    return price;
+  }
+  public Integer getNumberRooms() {
+    return numberRooms;
+  }
 }

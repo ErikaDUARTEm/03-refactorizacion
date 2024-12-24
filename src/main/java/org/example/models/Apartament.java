@@ -27,22 +27,25 @@ public class Apartament extends Accommodation {
           *************************************************************
           ***                 Apartamentos Disponibles                ***
           *************************************************************
-      
+           Tipo:                %s
            Nombre:              %s
            Ciudad:              %s
            Descripción:         %s
            Calificación:         %.1f
           💲 Precio por noche:    $%.2f
-           Habitaciones:        %d disponibles
+           Habitaciones:        %d"
       
           *************************************************************
           %s
           *************************************************************
           """,
+          this.getType(),
           this.getName(),
           this.getCity(),
           this.getDescription(),
-          this.getRating()
+          this.getRating(),
+          this.getPrice(),
+          this.getNumberRooms()
         );
 
     }

@@ -13,10 +13,12 @@ import java.util.List;
 public class AccommodationRepository {
 
   private static AccommodationRepository instance;
-  private List<Accommodation> listAccommodation;
+  private final List<Accommodation> listAccommodation;
 
   private AccommodationRepository() {
     this.listAccommodation = new ArrayList<>();
+    try { cargarDatos(); }
+    catch (Exception e) { System.err.println("Error al cargar los datos: " + e.getMessage()); }
   }
 
   public static synchronized AccommodationRepository getInstance(){
@@ -28,6 +30,7 @@ public class AccommodationRepository {
   public List<Accommodation> getListAccommodation(){
     return listAccommodation;
   }
+
   public void cargarDatos() {
     // CREACIÓN DE HOTELES
 
@@ -37,7 +40,7 @@ public class AccommodationRepository {
     habitacionesHotel1.add(new Room("Habitación cuádruple", "4 camas, vista al jardín, aire acondicionado, baño privado, minibar", 4, 2 ,80.0, 2, false));
     habitacionesHotel1.add(new Room("Habitación familiar", "4 camas matrimoniales, sala de estar, aire acondicionado, baño privado", 4, 2 ,100.0, 3, false));
     habitacionesHotel1.add(new Room("Suite", "Cama king size, sala de estar, jacuzzi, aire acondicionado, baño privado", 2, 2 ,150.0, 3, false));
-    Hotel hotel1 = new Hotel("Hotel","Hotel Castillo Resort", "San Gil", "Hotel Castillo Resort se encuentra en San Gil...",4.5, habitacionesHotel1);
+    Hotel hotel1 = new Hotel("Hotel","Hotel Castillo Resort", "san gil", "Hotel Castillo Resort se encuentra en San Gil...",4.5, habitacionesHotel1);
 
     LinkedList<Room> habitacionesHotel2 = new LinkedList<>();
     habitacionesHotel2.add(new Room("Habitación sencilla", "Cama individual, baño privado, aire acondicionado", 1, 2 ,100.0, 3, true));
