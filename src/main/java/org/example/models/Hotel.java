@@ -6,12 +6,14 @@ import java.util.List;
 public class Hotel extends Accommodation {
 
   private List<Room> availableRooms;
+  private SunnyDay sunnyDay;
 
-    public Hotel(String type, String name, String city, String description, Double rating, List<Room> availableRooms) {
+    public Hotel(String type, String name, String city, String description, Double rating, SunnyDay sunnyDay, List<Room> availableRooms) {
         super(type, name, city, description, rating);
-        this.availableRooms = availableRooms;
+      this.availableRooms = availableRooms;
+      this.sunnyDay = sunnyDay;
     }
-
+  public boolean hasSunnyDay() { return sunnyDay != null; }
   @Override
   public String viewAccommodation() {
     return String.format(
@@ -43,4 +45,8 @@ public class Hotel extends Accommodation {
   public List<Room> getAvailableRooms() {
     return availableRooms;
   }
+  public SunnyDay getSunnyDay() {
+    return sunnyDay;
+  }
+
 }
